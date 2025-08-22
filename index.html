@@ -202,6 +202,9 @@
             box-shadow: 0 6px 20px rgba(39, 174, 96, 0.3);
             text-transform: uppercase;
             letter-spacing: 1px;
+            -webkit-tap-highlight-color: transparent;
+            user-select: none;
+            -webkit-user-select: none;
         }
 
         .btn-primary:hover {
@@ -846,10 +849,15 @@
             }
             
             .btn-primary {
-                padding: 15px 35px;
-                font-size: 1.1rem;
+                padding: 18px 40px;
+                font-size: 1.2rem;
                 width: 100%;
-                max-width: 300px;
+                max-width: 350px;
+                min-height: 56px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                touch-action: manipulation;
             }
 
             .appeal-content {
@@ -922,12 +930,44 @@
             }
             
             .btn-primary {
-                padding: 12px 25px;
-                font-size: 1rem;
+                padding: 16px 30px;
+                font-size: 1.1rem;
+                width: 100%;
+                max-width: 320px;
+                min-height: 52px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                touch-action: manipulation;
+                margin: 0 auto;
             }
             
             .hero-overlay {
                 opacity: 0.95;
+            }
+            
+            .btn-primary:hover {
+                transform: none;
+            }
+            
+            .btn-primary:active {
+                transform: scale(0.98);
+                background: #229954;
+            }
+        }
+        
+        /* Touch devices optimization */
+        @media (hover: none) and (pointer: coarse) {
+            .btn-primary:hover {
+                transform: none;
+                background: #27ae60;
+                box-shadow: 0 6px 20px rgba(39, 174, 96, 0.3);
+            }
+            
+            .btn-primary:active {
+                transform: scale(0.96);
+                background: #229954;
+                box-shadow: 0 4px 15px rgba(39, 174, 96, 0.4);
             }
         }
 
