@@ -1,0 +1,1533 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rentrée Scolaire - WHEN FONDATION</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #2c3e50;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(15px);
+            padding: 0.1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(44, 62, 80, 0.1);
+            animation: slideDown 0.8s ease-out;
+        }
+
+        @keyframes slideDown {
+            from { transform: translateY(-100%); }
+            to { transform: translateY(0); }
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: 800;
+            color: #2c3e50;
+            letter-spacing: -1px;
+        }
+
+        .logo .accent {
+            color: #3498db;
+        }
+
+        .donate-btn-header {
+            background: #3498db;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+        }
+
+        .donate-btn-header:hover {
+            transform: translateY(-2px);
+            background: #2980b9;
+            box-shadow: 0 6px 20px rgba(52, 152, 219, 0.4);
+        }
+
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .language-selector {
+            display: flex;
+            gap: 5px;
+        }
+
+        .lang-btn {
+            background: transparent;
+            border: 2px solid #3498db;
+            color: #3498db;
+            padding: 8px 12px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .lang-btn:hover,
+        .lang-btn.active {
+            background: #3498db;
+            color: white;
+        }
+
+        /* Hero Section with Real Photo */
+        .hero {
+            min-height: 100vh;
+            padding: 120px 0 60px 0;
+            background: linear-gradient(rgba(44, 62, 80, 0.75), rgba(52, 73, 94, 0.6)), 
+                        url('https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(52, 152, 219, 0.85), rgba(41, 128, 185, 0.8));
+            opacity: 0.92;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            color: white;
+            animation: fadeInUp 1s ease-out 0.5s both;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            font-weight: 900;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7);
+            line-height: 1.1;
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            font-weight: 300;
+            opacity: 0.98;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2.5rem;
+            opacity: 0.95;
+            font-weight: 400;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 25px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background: #27ae60;
+            color: white;
+            padding: 18px 40px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            text-decoration: none;
+            display: inline-block;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 6px 20px rgba(39, 174, 96, 0.3);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            background: #229954;
+            box-shadow: 0 8px 25px rgba(39, 174, 96, 0.4);
+        }
+
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.5s;
+        }
+
+        .btn-primary:hover::before {
+            left: 100%;
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            padding: 18px 40px;
+            border: 2px solid white;
+            border-radius: 8px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .btn-secondary:hover {
+            background: white;
+            color: #2c3e50;
+            transform: translateY(-3px);
+        }
+
+        /* Urgent Appeal Section */
+        .urgent-appeal {
+            background: #fff;
+            padding: 0;
+            position: relative;
+        }
+
+        .appeal-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            min-height: 600px;
+            align-items: center;
+        }
+
+        .appeal-text {
+            padding: 80px 60px;
+            background: #f8f9fa;
+        }
+
+        .appeal-text h2 {
+            font-size: 2.8rem;
+            margin-bottom: 25px;
+            color: #2c3e50;
+            font-weight: 800;
+            line-height: 1.2;
+        }
+
+        .appeal-text .highlight {
+            color: #e74c3c;
+            font-weight: 900;
+        }
+
+        .appeal-text p {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: #5a6c7d;
+            line-height: 1.7;
+        }
+
+        .appeal-text .urgent-number {
+            font-size: 3rem;
+            font-weight: 900;
+            color: #e74c3c;
+            margin: 20px 0;
+            display: block;
+        }
+
+        .appeal-image {
+            background: url('https://media.istockphoto.com/id/1171445449/fr/photo/bo%C3%AEte-de-donation-avec-des-approvisionnements-d%C3%A9cole-sur-le-vieux-fond-en-bois.jpg?s=612x612&w=0&k=20&c=xslc-TgbzoerGw6BSa2e6DWxb232C1N6f4w68dT43To=');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            min-height: 600px;
+            width: 100%;
+        }
+
+        .appeal-image::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(52, 152, 219, 0.1), rgba(0, 0, 0, 0.05));
+        }
+
+        /* Statistics Section */
+        .stats {
+            background: #34495e;
+            color: white;
+            padding: 100px 0;
+            position: relative;
+        }
+
+        .stats::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://images.unsplash.com/photo-1497486751825-1233686d5d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.1;
+        }
+
+        .stats-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+        }
+
+        .stats h2 {
+            font-size: 3rem;
+            margin-bottom: 60px;
+            font-weight: 800;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 50px;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 40px 20px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transform: translateY(30px);
+            opacity: 0;
+            transition: all 0.6s ease;
+        }
+
+        .stat-item.visible {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .stat-item:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-10px);
+        }
+
+        .stat-number {
+            font-size: 4rem;
+            font-weight: 900;
+            margin-bottom: 15px;
+            color: #3498db;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .stat-label {
+            font-size: 1.2rem;
+            font-weight: 600;
+            opacity: 0.9;
+        }
+
+        /* Impact Stories Section */
+        .impact-stories {
+            background: #fff;
+            padding: 100px 0;
+        }
+
+        .impact-stories h2 {
+            text-align: center;
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: #2c3e50;
+            font-weight: 800;
+        }
+
+        .impact-stories .subtitle {
+            text-align: center;
+            font-size: 1.3rem;
+            margin-bottom: 80px;
+            color: #7f8c8d;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .stories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .story-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(44, 62, 80, 0.1);
+            transition: all 0.4s ease;
+            position: relative;
+        }
+
+        .story-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(44, 62, 80, 0.15);
+        }
+
+        .story-image {
+            height: 250px;
+            background-size: cover;
+            background-position: top;
+            position: relative;
+        }
+
+        .story-card:nth-child(1) .story-image {
+            background-image: url('https://i.imgur.com/GySHrQF.png');
+        }
+
+        .story-card:nth-child(2) .story-image {
+            background-image: url('https://i.imgur.com/NGKcMRI.png');
+        }
+
+        .story-card:nth-child(3) .story-image {
+            background-image: url('https://i.imgur.com/EazZnty.png');
+        }
+
+        .story-content {
+            padding: 30px;
+        }
+
+        .story-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: #2c3e50;
+            font-weight: 700;
+        }
+
+        .story-content p {
+            color: #5a6c7d;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .story-impact {
+            background: #ecf0f1;
+            padding: 15px;
+            border-radius: 8px;
+            font-weight: 600;
+            color: #e74c3c;
+            text-align: center;
+            border-left: 4px solid #3498db;
+        }
+
+        /* Progress Section */
+        .progress-section {
+            background: #3498db;
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .progress-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="2" fill="rgba(255,255,255,0.1)"/></svg>');
+            animation: float 20s linear infinite;
+        }
+
+        @keyframes float {
+            0% { transform: rotate(0deg) translateX(100px) rotate(0deg); }
+            100% { transform: rotate(360deg) translateX(100px) rotate(-360deg); }
+        }
+
+        .progress-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .progress-content h2 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            font-weight: 800;
+        }
+
+        .progress-content .campaign-goal {
+            font-size: 1.5rem;
+            margin-bottom: 50px;
+            opacity: 0.9;
+        }
+
+        .progress-bar-container {
+            background: rgba(255, 255, 255, 0.2);
+            height: 30px;
+            border-radius: 15px;
+            margin: 40px 0;
+            overflow: hidden;
+            box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: #27ae60;
+            border-radius: 15px;
+            width: 0%;
+            transition: width 3s ease-in-out;
+            position: relative;
+            box-shadow: 0 2px 10px rgba(39, 174, 96, 0.3);
+        }
+
+        .progress-fill.animate {
+            width: 0.9%;
+        }
+
+        .progress-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .progress-stat {
+            text-align: center;
+        }
+
+        .progress-stat-number {
+            font-size: 2.5rem;
+            font-weight: 900;
+            margin-bottom: 10px;
+        }
+
+        .progress-stat-label {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        /* Donation Section */
+        .donation-section {
+            background: #fff;
+            padding: 120px 0;
+        }
+
+        .donation-container {
+            max-width: 700px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .donation-container h2 {
+            font-size: 3.5rem;
+            margin-bottom: 25px;
+            color: #2c3e50;
+            font-weight: 900;
+            line-height: 1.1;
+        }
+
+        .donation-container .subtitle {
+            font-size: 1.4rem;
+            margin-bottom: 50px;
+            color: #7f8c8d;
+            line-height: 1.6;
+        }
+
+        .donation-impact {
+            background: #f8f9fa;
+            padding: 40px;
+            border-radius: 12px;
+            margin: 40px 0;
+            text-align: left;
+            border-left: 4px solid #3498db;
+        }
+
+        .donation-impact h3 {
+            color: #2c3e50;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .impact-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+
+        .impact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 600;
+            color: #2c3e50;
+        }
+
+        .amount-buttons {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 20px;
+            margin: 50px 0;
+        }
+
+        .amount-btn {
+            padding: 20px 15px;
+            border: 3px solid #3498db;
+            background: white;
+            color: #3498db;
+            border-radius: 12px;
+            font-size: 1.3rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .amount-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: #3498db;
+            transition: left 0.3s ease;
+            z-index: 0;
+        }
+
+        .amount-btn span {
+            position: relative;
+            z-index: 1;
+        }
+
+        .amount-btn:hover::before,
+        .amount-btn.selected::before {
+            left: 0;
+        }
+
+        .amount-btn:hover span,
+        .amount-btn.selected span {
+            color: white;
+        }
+
+        .amount-btn:hover,
+        .amount-btn.selected {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(52, 152, 219, 0.3);
+        }
+
+        .custom-amount {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            align-items: center;
+            margin: 30px 0;
+        }
+
+        .custom-amount input {
+            padding: 20px;
+            border: 3px solid #ecf0f1;
+            border-radius: 12px;
+            font-size: 1.3rem;
+            font-weight: 600;
+            width: 250px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .custom-amount input:focus {
+            outline: none;
+            border-color: #3498db;
+            box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+        }
+
+        .donate-btn {
+            background: #27ae60;
+            color: white;
+            padding: 25px 50px;
+            border: none;
+            border-radius: 12px;
+            font-size: 1.4rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            margin-top: 30px;
+            width: 100%;
+            max-width: 400px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 6px 20px rgba(39, 174, 96, 0.3);
+        }
+
+        .donate-btn:hover {
+            transform: translateY(-3px);
+            background: #229954;
+            box-shadow: 0 8px 25px rgba(39, 174, 96, 0.4);
+        }
+
+        .security-note {
+            margin-top: 30px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 12px;
+            font-size: 0.95rem;
+            color: #5a6c7d;
+            border-left: 4px solid #27ae60;
+        }
+
+        /* Footer */
+        footer {
+            background: #2c3e50;
+            color: white;
+            padding: 80px 0 40px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 25px;
+            color: #3498db;
+            font-size: 1.3rem;
+            font-weight: 700;
+        }
+
+        .footer-section p,
+        .footer-section div {
+            margin-bottom: 10px;
+            opacity: 0.8;
+            line-height: 1.6;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #34495e;
+            padding-top: 30px;
+            text-align: center;
+            opacity: 0.7;
+        }
+
+        .footer-bottom a {
+            color: #3498db;
+            text-decoration: none;
+        }
+
+        .footer-bottom a:hover {
+            color: #2980b9;
+        }
+
+        /* Mobile Responsiveness */
+        /* Large tablets and small desktops */
+        @media (max-width: 1024px) {
+            .hero {
+                min-height: 90vh;
+                padding: 100px 0 50px 0;
+            }
+            
+            .hero h1 {
+                font-size: 3.5rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.4rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .hero-content {
+                padding: 0 30px;
+            }
+        }
+        
+        /* Tablets */
+        @media (max-width: 768px) {
+            .hero {
+                min-height: 80vh;
+                padding: 90px 0 40px 0;
+                background-attachment: scroll;
+            }
+            
+            .hero h1 {
+                font-size: 2.8rem;
+                margin-bottom: 1rem;
+                text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7);
+                line-height: 1.2;
+            }
+
+            .hero-subtitle {
+                font-size: 1.3rem;
+                margin-bottom: 0.8rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+                margin-bottom: 2rem;
+                text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+                line-height: 1.4;
+            }
+            
+            .hero-content {
+                padding: 0 25px;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+            }
+            
+            .btn-primary {
+                padding: 15px 35px;
+                font-size: 1.1rem;
+                width: 100%;
+                max-width: 300px;
+            }
+
+            .appeal-content {
+                grid-template-columns: 1fr;
+            }
+
+            .appeal-text {
+                padding: 40px 30px;
+            }
+
+            .appeal-text h2 {
+                font-size: 2rem;
+            }
+
+            .stories-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .amount-buttons {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 15px;
+            }
+
+            .custom-amount {
+                flex-direction: column;
+            }
+
+            .custom-amount input {
+                width: 100%;
+                max-width: 300px;
+            }
+
+            .progress-stats {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+        }
+        
+        /* Mobile phones */
+        @media (max-width: 480px) {
+            .hero {
+                min-height: 100vh;
+                padding: 80px 0 30px 0;
+                background-attachment: scroll;
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+                line-height: 1.3;
+                text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.8);
+                margin-bottom: 1rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.1rem;
+                margin-bottom: 0.8rem;
+                line-height: 1.3;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+                line-height: 1.5;
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+                margin-bottom: 2rem;
+            }
+            
+            .hero-content {
+                padding: 0 20px;
+                max-width: 100%;
+            }
+            
+            .btn-primary {
+                padding: 12px 25px;
+                font-size: 1rem;
+            }
+            
+            .hero-overlay {
+                opacity: 0.95;
+            }
+        }
+
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Scroll indicator */
+        .scroll-indicator {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateX(-50%) translateY(0);
+            }
+            40% {
+                transform: translateX(-50%) translateY(-10px);
+            }
+            60% {
+                transform: translateX(-50%) translateY(-5px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">WHEN <span class="accent">FONDATION</span></div>
+                <div class="header-right">
+                    <div class="language-selector">
+                        <button class="lang-btn active" data-lang="fr">🇫🇷 FR</button>
+                        <button class="lang-btn" data-lang="en">🇬🇧 EN</button>
+                    </div>
+                    <a href="https://ijffcltq.mychariow.com/prd_88lgf6" target="_blank" class="donate-btn-header">🎁 <span data-translate="donate-btn">FAIRE UN DON</span></a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-overlay"></div>
+        <div class="container">
+            <div class="hero-content">
+                <h1 data-translate="hero-title">Ensemble, construisons un avenir meilleur pour nos enfants</h1>
+                <p class="hero-subtitle" data-translate="hero-subtitle">Votre générosité peut transformer des vies et offrir de nouvelles opportunités aux enfants qui en ont le plus besoin.</p>
+                <div class="cta-buttons">
+                    <a href="#donation" class="btn-primary" data-translate="donate-now">Faire un don maintenant</a>
+                    <a href="#stories" class="btn-secondary" data-translate="their-stories">LEURS HISTOIRES</a>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div style="font-size: 2rem;">↓</div>
+            <div data-translate="discover-reality">Découvrez leur réalité</div>
+        </div>
+    </section>
+
+    <!-- Urgent Appeal Section -->
+    <section class="urgent-appeal">
+        <div class="appeal-content">
+            <div class="appeal-text">
+                <h2 data-translate="urgent-title">URGENCE : La Rentrée Approche</h2>
+                <p data-translate="urgent-text1">Dans moins de 30 jours, des milliers d'enfants africains regarderont leurs camarades partir à l'école... sans pouvoir les suivre.</p>
+                <p data-translate="urgent-text2">Faute de cahiers, de stylos, d'uniformes ou de frais de scolarité, ils resteront chez eux, leurs rêves brisés.</p>
+                <span class="urgent-number" data-translate="urgent-number">5 247 enfants</span>
+                <p data-translate="urgent-text3">attendent encore votre aide pour cette rentrée. Chaque jour qui passe, c'est une chance en moins pour leur avenir.</p>
+            </div>
+            <div class="appeal-image"></div>
+        </div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section class="stats">
+        <div class="container">
+            <div class="stats-content">
+                <h2 data-translate="stats-title">La Réalité en Chiffres</h2>
+                <div class="stats-grid">
+                    <div class="stat-item fade-in">
+                        <div class="stat-number" data-target="251">0</div>
+                        <div class="stat-label" data-translate="stat1-label">Millions d'enfants déscolarisés dans le monde</div>
+                    </div>
+                    <div class="stat-item fade-in">
+                        <div class="stat-number" data-target="98">0</div>
+                        <div class="stat-label" data-translate="stat2-label">Millions d'enfants sans école en Afrique subsaharienne</div>
+                    </div>
+                    <div class="stat-item fade-in">
+                        <div class="stat-number" data-target="1">0</div>
+                        <div class="stat-label" data-translate="stat3-label">Enfant sur 5 non scolarisé en Afrique</div>
+                    </div>
+                    <div class="stat-item fade-in">
+                        <div class="stat-number" data-target="100">0</div>
+                        <div class="stat-label" data-translate="stat4-label">% de nos fonds vont directement aux enfants</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Impact Stories Section -->
+    <section class="impact-stories" id="stories">
+        <div class="container">
+            <h2 data-translate="stories-title">Des Visages Derrière les Chiffres</h2>
+            <p class="subtitle" data-translate="stories-subtitle">Voici quelques-uns des enfants que nous aidons grâce à votre générosité</p>
+            
+            <div class="stories-grid">
+                <div class="story-card fade-in">
+                    <div class="story-image"></div>
+                    <div class="story-content">
+                        <h3 data-translate="story1-name">Amina, 8 ans</h3>
+                        <p data-translate="story1-text">Amina rêve de devenir médecin, mais ses parents n'ont pas les moyens de lui acheter des fournitures scolaires. Elle aide sa mère au marché au lieu d'aller à l'école.</p>
+                        <div class="story-impact" data-translate="story1-impact">
+                            Avec 100€, Amina pourrait retourner en classe
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="story-card fade-in">
+                    <div class="story-image"></div>
+                    <div class="story-content">
+                        <h3 data-translate="story2-name">Kwame, 10 ans</h3>
+                        <p data-translate="story2-text">Kwame marche 8 km chaque jour pour aller chercher de l'eau. Il n'a jamais mis les pieds dans une école, mais il sait compter jusqu'à 100 tout seul.</p>
+                        <div class="story-impact" data-translate="story2-impact">
+                            100€ peuvent offrir à Kwame sa première rentrée
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="story-card fade-in">
+                    <div class="story-image"></div>
+                    <div class="story-content">
+                        <h3 data-translate="story3-name">Fatou, 12 ans</h3>
+                        <p data-translate="story3-text">Brillante élève, Fatou a dû arrêter l'école en CM1. Ses parents ne peuvent plus payer les frais de scolarité. Elle garde maintenant les chèvres de la famille.</p>
+                        <div class="story-impact" data-translate="story3-impact">
+                            100€ permettraient à Fatou de finir sa scolarité
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Progress Section -->
+    <section class="progress-section">
+        <div class="container">
+            <div class="progress-content">
+                <h2 data-translate="campaign-title">Objectif Rentrée 2025</h2>
+                <p class="campaign-goal" data-translate="campaign-goal">Nous devons collecter 100 000 € avant le 15 septembre pour aider 1 000 enfants</p>
+                
+                <div class="progress-bar-container">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+                
+                <div class="progress-stats">
+                    <div class="progress-stat">
+                        <div class="progress-stat-number">900 €</div>
+                        <div class="progress-stat-label" data-translate="collected">Collectés</div>
+                    </div>
+                    <div class="progress-stat">
+                        <div class="progress-stat-number">9</div>
+                        <div class="progress-stat-label" data-translate="children-helped">Enfants aidés</div>
+                    </div>
+                    <div class="progress-stat">
+                        <div class="progress-stat-number">99 100 €</div>
+                        <div class="progress-stat-label" data-translate="remaining">Restants</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Donation Section -->
+    <section class="donation-section" id="donation">
+        <div class="container">
+            <div class="donation-container fade-in">
+                <h2 data-translate="donation-title">Votre Don = Leur Espoir</h2>
+                <p class="subtitle" data-translate="donation-subtitle">Chaque euro compte. Choisissez le montant qui vous permet de changer une vie dès aujourd'hui.</p>
+                
+                <div class="donation-impact">
+                    <h3 data-translate="donation-impact-title">Concrètement, votre don finance :</h3>
+                    <div class="impact-list">
+                        <div class="impact-item">
+                            <span style="color: #3498db; font-size: 1.2rem;">📚</span>
+                            <span data-translate="school-supplies">Cahiers et livres scolaires</span>
+                        </div>
+                        <div class="impact-item">
+                            <span style="color: #3498db; font-size: 1.2rem;">✏️</span>
+                            <span data-translate="writing-materials">Stylos et matériel d'écriture</span>
+                        </div>
+                        <div class="impact-item">
+                            <span style="color: #3498db; font-size: 1.2rem;">🎒</span>
+                            <span data-translate="school-bags">Sacs et uniformes scolaires</span>
+                        </div>
+                        <div class="impact-item">
+                            <span style="color: #3498db; font-size: 1.2rem;">🏫</span>
+                            <span data-translate="school-fees">Frais de scolarité</span>
+                        </div>
+                        <div class="impact-item">
+                            <span style="color: #3498db; font-size: 1.2rem;">👨‍🏫</span>
+                            <span data-translate="teacher-training">Formation des enseignants</span>
+                        </div>
+                        <div class="impact-item">
+                            <span style="color: #3498db; font-size: 1.2rem;">🍽️</span>
+                            <span data-translate="school-meals">Repas scolaires nutritifs</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="amount-buttons">
+                    <div class="amount-btn disabled" style="pointer-events: none; opacity: 0.9;">
+                        <span>100 €<br><small>1 <span data-translate="child-equipped">enfant équipé et scolarisé</span></small></span>
+                    </div>
+                    <div class="amount-btn disabled" style="pointer-events: none; opacity: 0.9;">
+                        <span>200 €<br><small>2 <span data-translate="children-equipped">enfants équipés et scolarisés</span></small></span>
+                    </div>
+                    <div class="amount-btn disabled" style="pointer-events: none; opacity: 0.9;">
+                        <span>400 €<br><small>4 <span data-translate="children-equipped">enfants équipés et scolarisés</span></small></span>
+                    </div>
+                    <div class="amount-btn disabled" style="pointer-events: none; opacity: 0.9;">
+                        <span>1000 €<br><small>10 <span data-translate="children-equipped">enfants équipés et scolarisés</span></small></span>
+                    </div>
+                </div>
+                
+                <button class="donate-btn" onclick="processDonation()">
+                    💖 <span data-translate="secure-donation">JE FAIS UN DON SÉCURISÉ</span>
+                </button>
+                
+                <div class="security-note">
+                    🔒 <strong><span data-translate="secure-payment">Paiement 100% sécurisé</span></strong>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 data-translate="footer-foundation">WHEN FONDATION</h3>
+                    <p data-translate="footer-guarantee"><strong>100% de vos dons vont directement aux enfants</strong></p>
+                </div>
+                
+
+                
+                <div class="footer-section">
+                    <h3 data-translate="footer-contact">Contact & Transparence</h3>
+                    <div>📧 foundationwhen@gmail.com</div>
+                    <div>📍 Afrique</div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3 data-translate="footer-follow">Suivez Notre Impact</h3>
+                    <div>📱 Facebook : WHEN Fondation</div>
+                    <div>📷 Instagram : @whenfondation</div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p data-translate="footer-rights">&copy; 2025 WHEN FONDATION - Tous droits réservés | 
+                <a href="#" data-translate="footer-legal">Mentions légales</a> | 
+                <a href="#" data-translate="footer-privacy">Politique de confidentialité</a> | 
+                <a href="#" data-translate="footer-reports">Rapports d'activité</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Animation on scroll
+        function animateOnScroll() {
+            const elements = document.querySelectorAll('.fade-in, .stat-item');
+            elements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 100;
+                
+                if (elementTop < window.innerHeight - elementVisible) {
+                    element.classList.add('visible');
+                }
+            });
+        }
+
+        // Counter animation
+        function animateCounters() {
+            const counters = document.querySelectorAll('[data-target]');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const counter = entry.target;
+                        const target = parseInt(counter.getAttribute('data-target'));
+                        const duration = 3000;
+                        const step = target / (duration / 16);
+                        let current = 0;
+                        
+                        const timer = setInterval(() => {
+                            current += step;
+                            if (current >= target) {
+                                counter.textContent = target.toLocaleString();
+                                clearInterval(timer);
+                            } else {
+                                counter.textContent = Math.floor(current).toLocaleString();
+                            }
+                        }, 16);
+                        
+                        observer.unobserve(counter);
+                    }
+                });
+            });
+            
+            counters.forEach(counter => observer.observe(counter));
+        }
+
+        // Progress bar animation
+        function animateProgressBar() {
+            const progressFill = document.getElementById('progressFill');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        setTimeout(() => {
+                            progressFill.classList.add('animate');
+                        }, 500);
+                        observer.unobserve(entry.target);
+                    }
+                });
+            });
+            
+            observer.observe(progressFill);
+        }
+
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Donation processing
+        function processDonation() {
+            // Redirection directe vers la plateforme de paiement
+            window.open('https://ijffcltq.mychariow.com/prd_88lgf6', '_blank');
+        }
+
+        // Header background on scroll
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(255, 255, 255, 0.98)';
+                header.style.boxShadow = '0 2px 25px rgba(44, 62, 80, 0.15)';
+            } else {
+                header.style.background = 'rgba(255, 255, 255, 0.98)';
+                header.style.boxShadow = '0 2px 20px rgba(44, 62, 80, 0.1)';
+            }
+        });
+
+        // Language translations
+        const translations = {
+            fr: {
+                'donate-btn': 'FAIRE UN DON',
+                'hero-title': 'Ensemble, construisons un avenir meilleur pour nos enfants',
+                'hero-subtitle': 'Votre générosité peut transformer des vies et offrir de nouvelles opportunités aux enfants qui en ont le plus besoin.',
+                'donate-now': 'Faire un don maintenant',
+                'their-stories': 'LEURS HISTOIRES',
+                'discover-reality': 'Découvrez leur réalité',
+                'urgent-title': 'URGENCE : La Rentrée Approche',
+                'stats-title': 'La Réalité en Chiffres',
+                'stat1-label': 'Millions d\'enfants déscolarisés dans le monde',
+                'stat2-label': 'Millions d\'enfants sans école en Afrique subsaharienne',
+                'stat3-label': 'Enfant sur 5 non scolarisé en Afrique',
+                'stat4-label': '% de nos fonds vont directement aux enfants',
+                'stories-title': 'Des Visages Derrière les Chiffres',
+                'stories-subtitle': 'Voici quelques-uns des enfants que nous aidons grâce à votre générosité',
+                'urgent-text1': 'Dans moins de 30 jours, des milliers d\'enfants africains regarderont leurs camarades partir à l\'école... sans pouvoir les suivre.',
+                'urgent-text2': 'Faute de cahiers, de stylos, d\'uniformes ou de frais de scolarité, ils resteront chez eux, leurs rêves brisés.',
+                'urgent-number': '5 247 enfants',
+                'urgent-text3': 'attendent encore votre aide pour cette rentrée. Chaque jour qui passe, c\'est une chance en moins pour leur avenir.',
+                'stats-title': 'La Réalité en Chiffres',
+                'stat1-label': 'Millions d\'enfants déscolarisés dans le monde',
+                'stat2-label': 'Millions d\'enfants sans école en Afrique subsaharienne',
+                'stat3-label': 'Enfant sur 5 non scolarisé en Afrique',
+                'stat4-label': '% de nos fonds vont directement aux enfants',
+                'stories-title': 'Des Visages Derrière les Chiffres',
+                'stories-subtitle': 'Voici quelques-uns des enfants que nous aidons grâce à votre générosité',
+                'school-bags': 'Sacs et uniformes scolaires',
+                'teacher-training': 'Formation des enseignants',
+                'school-fees': 'Frais de scolarité',
+                'school-meals': 'Repas scolaires nutritifs',
+                'notebooks-books': 'Cahiers et livres scolaires',
+                'pens-materials': 'Stylos et matériel d\'écriture',
+                'donation-title': 'Votre Don = Leur Espoir',
+                'donation-subtitle': 'Chaque euro compte. Choisissez le montant qui vous permet de changer une vie dès aujourd\'hui.',
+                'donation-finances': 'Concrètement, votre don finance :',
+                'secure-donation': 'JE FAIS UN DON SÉCURISÉ',
+                'secure-payment': 'Paiement 100% sécurisé',
+                'child-equipped': 'enfant équipé et scolarisé',
+                'children-equipped': 'enfants équipés et scolarisés',
+                'foundation-name': 'WHEN FONDATION',
+                'foundation-promise': '100% de vos dons vont directement aux enfants',
+                'contact-transparency': 'Contact & Transparence',
+                'follow-impact': 'Suivez Notre Impact',
+                'legal-mentions': 'Mentions légales',
+                'privacy-policy': 'Politique de confidentialité',
+                'activity-reports': 'Rapports d\'activité',
+                'story1-name': 'Amina, 8 ans',
+                'story1-text': 'Amina rêve de devenir médecin, mais ses parents n\'ont pas les moyens de lui acheter des fournitures scolaires. Elle aide sa mère au marché au lieu d\'aller à l\'école.',
+                'story1-impact': 'Avec 100€, Amina pourrait retourner en classe',
+                'story2-name': 'Kwame, 10 ans',
+                'story2-text': 'Kwame marche 8 km chaque jour pour aller chercher de l\'eau. Il n\'a jamais mis les pieds dans une école, mais il sait compter jusqu\'à 100 tout seul.',
+                'story2-impact': '100€ peuvent offrir à Kwame sa première rentrée',
+                'story3-name': 'Fatou, 12 ans',
+                'story3-text': 'Brillante élève, Fatou a dû arrêter l\'école en CM1. Ses parents ne peuvent plus payer les frais de scolarité. Elle garde maintenant les chèvres de la famille.',
+                'story3-impact': '100€ permettraient à Fatou de finir sa scolarité',
+                'campaign-title': 'Objectif Rentrée 2025',
+                'campaign-goal': 'Nous devons collecter 100 000 € avant le 15 septembre pour aider 1 000 enfants',
+                'collected': 'Collectés',
+                'children-helped': 'Enfants aidés',
+                'remaining': 'Restants',
+                'donation-impact-title': 'Concrètement, votre don finance :',
+                'school-supplies': 'Cahiers et livres scolaires',
+                'writing-materials': 'Stylos et matériel d\'écriture',
+                'school-bags': 'Sacs et uniformes scolaires',
+                'school-fees': 'Frais de scolarité',
+                'teacher-training': 'Formation des enseignants',
+                'school-meals': 'Repas scolaires nutritifs',
+                'footer-foundation': 'WHEN FONDATION',
+                'footer-guarantee': '100% de vos dons vont directement aux enfants',
+                'footer-contact': 'Contact & Transparence',
+                'footer-follow': 'Suivez Notre Impact',
+                'footer-rights': '© 2025 WHEN FONDATION - Tous droits réservés |',
+                'footer-legal': 'Mentions légales',
+                'footer-privacy': 'Politique de confidentialité',
+                'footer-reports': 'Rapports d\'activité'
+            },
+            en: {
+                'donate-btn': 'DONATE NOW',
+                'hero-title': 'Together, let\'s build a better future for our children',
+                'hero-subtitle': 'Your generosity can transform lives and offer new opportunities to children who need it most.',
+                'donate-now': 'Donate now',
+                'their-stories': 'THEIR STORIES',
+                'discover-reality': 'Discover their reality',
+                'urgent-title': 'URGENT: School Year Approaching',
+                'urgent-text1': 'In less than 30 days, thousands of African children will watch their classmates go to school... without being able to follow them.',
+                'urgent-text2': 'For lack of notebooks, pens, uniforms or school fees, they will stay home, their dreams shattered.',
+                'urgent-number': '5,247 children',
+                'urgent-text3': 'are still waiting for your help for this school year. Every day that passes is one less chance for their future.',
+                'stats-title': 'The Reality in Numbers',
+                'stat1-label': 'Million children out of school worldwide',
+                'stat2-label': 'Million children without school in sub-Saharan Africa',
+                'stat3-label': '1 in 5 children not enrolled in Africa',
+                'stat4-label': '% of our funds go directly to children',
+                'stories-title': 'Faces Behind the Numbers',
+                'stories-subtitle': 'Here are some of the children we help thanks to your generosity',
+                'school-bags': 'School bags and uniforms',
+                'teacher-training': 'Teacher training',
+                'school-fees': 'School fees',
+                'school-meals': 'Nutritious school meals',
+                'notebooks-books': 'Notebooks and school books',
+                'pens-materials': 'Pens and writing materials',
+                'donation-title': 'Your Donation = Their Hope',
+                'donation-subtitle': 'Every euro counts. Choose the amount that allows you to change a life today.',
+                'donation-finances': 'Specifically, your donation funds:',
+                'secure-donation': 'I MAKE A SECURE DONATION',
+                'secure-payment': '100% secure payment',
+                'child-equipped': 'child equipped and enrolled',
+                'children-equipped': 'children equipped and enrolled',
+                'foundation-name': 'WHEN FOUNDATION',
+                'foundation-promise': '100% of your donations go directly to children',
+                'contact-transparency': 'Contact & Transparency',
+                'follow-impact': 'Follow Our Impact',
+                'legal-mentions': 'Legal notices',
+                'privacy-policy': 'Privacy policy',
+                'activity-reports': 'Activity reports',
+                'discover-reality': 'Discover their reality',
+                'urgent-title': 'URGENT: School Year Approaching',
+                'urgent-text1': 'In less than 30 days, thousands of African children will watch their classmates go to school... without being able to follow them.',
+                'urgent-text2': 'For lack of notebooks, pens, uniforms or school fees, they will stay home, their dreams shattered.',
+                'urgent-number': '5,247 children',
+                'urgent-text3': 'are still waiting for your help for this school year. Every day that passes is one less chance for their future.',
+                'stats-title': 'The Reality in Numbers',
+                'stat1-label': 'Million out-of-school children worldwide',
+                'stat2-label': 'Million children without school in sub-Saharan Africa',
+                'stat3-label': '1 in 5 children not in school in Africa',
+                'stat4-label': '% of our funds go directly to children',
+                'stories-title': 'Faces Behind the Numbers',
+                'stories-subtitle': 'Here are some of the children we help thanks to your generosity',
+                'story1-name': 'Amina, 8 years old',
+                'story1-text': 'Amina dreams of becoming a doctor, but her parents cannot afford to buy her school supplies. She helps her mother at the market instead of going to school.',
+                'story1-impact': 'With €100, Amina could return to class',
+                'story2-name': 'Kwame, 10 years old',
+                'story2-text': 'Kwame walks 8 km every day to fetch water. He has never set foot in a school, but he can count to 100 by himself.',
+                'story2-impact': '€100 can offer Kwame his first school year',
+                'story3-name': 'Fatou, 12 years old',
+                'story3-text': 'Brilliant student, Fatou had to stop school in 4th grade. Her parents can no longer pay school fees. She now tends the family goats.',
+                'story3-impact': '€100 would allow Fatou to finish her education',
+                'campaign-title': '2025 School Year Goal',
+                'campaign-goal': 'We must raise €100,000 before September 15 to help 1,000 children',
+                'collected': 'Collected',
+                'children-helped': 'Children helped',
+                'remaining': 'Remaining',
+                'donation-title': 'Your Donation = Their Hope',
+                'donation-subtitle': 'Every euro counts. Choose the amount that allows you to change a life today.',
+                'donation-impact-title': 'Concretely, your donation funds:',
+                'school-supplies': 'Notebooks and school books',
+                'writing-materials': 'Pens and writing materials',
+                'footer-foundation': 'WHEN FOUNDATION',
+                'footer-guarantee': '100% of your donations go directly to children',
+                'footer-contact': 'Contact & Transparency',
+                'footer-follow': 'Follow Our Impact',
+                'footer-rights': '© 2025 WHEN FOUNDATION - All rights reserved |',
+                'footer-legal': 'Legal Notice',
+                'footer-privacy': 'Privacy Policy',
+                'footer-reports': 'Activity Reports'
+            }
+        };
+
+        // Language switching function
+        function switchLanguage(lang) {
+            // Update all elements with data-translate attribute
+            document.querySelectorAll('[data-translate]').forEach(element => {
+                const key = element.getAttribute('data-translate');
+                if (translations[lang] && translations[lang][key]) {
+                    element.textContent = translations[lang][key];
+                }
+            });
+
+            // Update language buttons
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.getAttribute('data-lang') === lang) {
+                    btn.classList.add('active');
+                }
+            });
+
+            // Save language preference
+            localStorage.setItem('selectedLanguage', lang);
+        }
+
+        // Initialize language system
+        document.addEventListener('DOMContentLoaded', function() {
+            // Load saved language or default to French
+            const savedLang = localStorage.getItem('selectedLanguage') || 'fr';
+            switchLanguage(savedLang);
+
+            // Add event listeners to language buttons
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const lang = this.getAttribute('data-lang');
+                    switchLanguage(lang);
+                });
+            });
+        });
+
+        // Initialize animations
+        window.addEventListener('scroll', animateOnScroll);
+        window.addEventListener('load', () => {
+            animateOnScroll();
+            animateCounters();
+            animateProgressBar();
+        });
+
+        // Emergency countdown (optional)
+        function startCountdown() {
+            const deadline = new Date('2025-09-15').getTime();
+            
+            setInterval(() => {
+                const now = new Date().getTime();
+                const timeLeft = deadline - now;
+                
+                const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+                
+                if (days > 0) {
+                    document.querySelector('.urgent-number').textContent = `${days} jours`;
+                    document.querySelector('.urgent-number').nextElementSibling.textContent = 
+                        `restants avant la rentrée. ${5247 - Math.floor(Math.random() * 100)} enfants attendent encore votre aide.`;
+                }
+            }, 1000 * 60 * 60); // Update hourly
+        }
+        
+        startCountdown();
+    </script>
+</body>
+</html>
